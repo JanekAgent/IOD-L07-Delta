@@ -1,3 +1,7 @@
+/**
+ * The BuildingInfoApp class is the entry point for the Building Info application.
+ * It starts the Spring Boot application and scans the specified base packages.
+ */
 package pl.put.poznan.buildinginfo.app;
 
 import org.springframework.boot.SpringApplication;

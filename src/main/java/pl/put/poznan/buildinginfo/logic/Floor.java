@@ -3,18 +3,34 @@ package pl.put.poznan.buildinginfo.logic;
 
 import java.util.List;
 
+/**
+ * The Floor class represents a floor in a building.
+ * It contains information about the floor's ID, name, level, and a list of rooms.
+ * The class provides methods to calculate the volume, total area, total lighting power,
+ * and average lighting power density of the rooms on the floor.
+ */
 public class Floor {
     private int id;
     private String name;
-
     private int level;
     private List<Room> rooms;
 
+    /**
+     * Constructs a new Floor object with the specified ID and name.
+     *
+     * @param id   the ID of the floor
+     * @param name the name of the floor
+     */
     public Floor(int id, String name) {
         this.id = id;
         this.name = name;
     }
 
+    /**
+     * Calculates the total volume of all rooms on the floor.
+     *
+     * @return the total volume of all rooms on the floor
+     */
     public double calculateVolume() {
         double totalVolume = 0;
         for (Room room : rooms) {
@@ -23,6 +39,11 @@ public class Floor {
         return totalVolume;
     }
 
+    /**
+     * Calculates the total area of all rooms on the floor.
+     *
+     * @return the total area of all rooms on the floor
+     */
     public double calculateTotalArea() {
         double totalArea = 0;
         for (Room room : rooms) {
@@ -31,6 +52,11 @@ public class Floor {
         return totalArea;
     }
 
+    /**
+     * Calculates the total lighting power of all rooms on the floor.
+     *
+     * @return the total lighting power of all rooms on the floor
+     */
     public double calculateTotalLightingPower() {
         double lightingPower = rooms.stream()
                 .mapToDouble(Room::getLightingPower)
@@ -38,9 +64,14 @@ public class Floor {
         return lightingPower;
     }
 
+    /**
+     * Calculates the average lighting power density of all rooms on the floor.
+     *
+     * @return the average lighting power density of all rooms on the floor
+     */
     public double calculateAverageLightingPowerDensity() {
         double levelArea = rooms.stream()
-                .mapToDouble(Room::getArea  )
+                .mapToDouble(Room::getArea)
                 .sum();
         double lightingPower = rooms.stream()
                 .mapToDouble(Room::getLightingPower)
@@ -49,7 +80,8 @@ public class Floor {
         return lightingPower / levelArea;
     }
 
-    // Getters and setters
+    // Getters and setters are not documented
+
     public int getId() {
         return id;
     }
@@ -58,7 +90,7 @@ public class Floor {
         return name;
     }
 
-    public int getLevel(){
+    public int getLevel() {
         return level;
     }
 
@@ -70,10 +102,10 @@ public class Floor {
         this.name = name;
     }
 
-    // Assuming a setter for rooms
     public void setRooms(List<Room> rooms) {
         this.rooms = rooms;
     }
+
 
     // Assuming a getter for rooms
     public List<Room> getRooms() {
