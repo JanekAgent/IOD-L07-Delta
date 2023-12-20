@@ -37,6 +37,7 @@ public class Floor {
                 .sum();
         return lightingPower;
     }
+
     public double calculateAverageLightingPowerDensity() {
         double levelArea = rooms.stream()
                 .mapToDouble(Room::getArea  )

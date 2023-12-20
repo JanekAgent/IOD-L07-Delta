@@ -6,6 +6,7 @@ public class Room {
     private double area;
     private double cube;
 
+
     private double lightingPower;
 
     private float heatingEnergyConsumption;
@@ -16,18 +17,20 @@ public class Room {
         this.name = name;
         this.area = area;
         this.cube = cube;
+
         this.lightingPower = lightingPower;
         this.heatingEnergyConsumption = heatingEnergyConsumption;
     }
 
-
-//    public double calculateHeatingEnergyPerVolume() {
-//        double volume = calculateVolume();
-//        if (volume == 0) return 0;
-//        return heatingEnergyConsumption / volume;
-//    }
+    public double calculateLightingPowerDensity() {
+        if (area == 0) return 0;
+        return lightingPower / area;
+    }
 
     // Getters
+    public int getId() {
+        return id;
+    }
     public String getName() {
         return name;
     }
@@ -39,35 +42,44 @@ public class Room {
     public double getCube() {
         return cube;
     }
+    public double getHeatingEnergyConsumption() {
+        return heatingEnergyConsumption;
+    }
+
+
 
 
     public double getLightingPower() {
         return lightingPower;
     }
 
-//    public double getHeatingEnergyConsumption() {
-//        return heatingEnergyConsumption;
-//    }
+
 
     // Setters
+    public void setId(int id) {
+        this.id = id;
+    }
     public void setName(String name) {
         this.name = name;
     }
 
-    public void setArea(double area) {
+    public void setArea(float area) {
         this.area = area;
     }
 
-    public void setCube(double cube) {
+    public void setCube(float cube) {
         this.cube = cube;
     }
 
 
-    public void setLightingPower(double lightingPower) {
+
+    public void setLightingPower(float lightingPower) {
         this.lightingPower = lightingPower;
     }
 
-//    public void setHeatingEnergyConsumption(double heatingEnergyConsumption) {
-//        this.heatingEnergyConsumption = heatingEnergyConsumption;
-//    }
+    public void setHeatingEnergyConsumption(float heatingEnergyConsumption) {
+        this.heatingEnergyConsumption = heatingEnergyConsumption;
+    }
 }
+
+
