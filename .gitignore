@@ -35,3 +35,7 @@ target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputF
 target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst
 target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst
 target/classes/application.properties
+.DS_Store
+.DS_Store
+.DS_Store
+.gitignore

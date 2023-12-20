@@ -12,7 +12,7 @@ import java.util.List;
 public class Floor {
     private int id;
     private String name;
-    private int level;
+
     private List<Room> rooms;
 
     /**
@@ -24,13 +24,15 @@ public class Floor {
     public Floor(int id, String name) {
         this.id = id;
         this.name = name;
+        this.rooms = rooms;
     }
-
+    
     /**
      * Calculates the total volume of all rooms on the floor.
      *
      * @return the total volume of all rooms on the floor
      */
+    @Override
     public double calculateVolume() {
         double totalVolume = 0;
         for (Room room : rooms) {
@@ -38,30 +40,31 @@ public class Floor {
         }
         return totalVolume;
     }
-
+    
     /**
      * Calculates the total area of all rooms on the floor.
      *
      * @return the total area of all rooms on the floor
      */
-    public double calculateTotalArea() {
+    @Override
+    public double calculateArea() {
         double totalArea = 0;
         for (Room room : rooms) {
             totalArea += room.getArea();
         }
         return totalArea;
     }
-
     /**
      * Calculates the total lighting power of all rooms on the floor.
      *
      * @return the total lighting power of all rooms on the floor
      */
-    public double calculateTotalLightingPower() {
-        double lightingPower = rooms.stream()
-                .mapToDouble(Room::getLightingPower)
-                .sum();
-        return lightingPower;
+    public double calculateLightingPower() {
+        double totalLightingPower = 0;
+        for (Room room : rooms) {
+            totalLightingPower += room.getLightingPower();
+        }
+        return totalLightingPower;
     }
 
     /**
@@ -90,9 +93,7 @@ public class Floor {
         return name;
     }
 
-    public int getLevel() {
-        return level;
-    }
+   
 
     public void setId(int id) {
         this.id = id;
