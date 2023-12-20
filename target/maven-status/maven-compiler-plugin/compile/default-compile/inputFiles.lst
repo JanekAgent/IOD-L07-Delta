@@ -1,3 +1,6 @@
-/Users/mochodek/Documents/Dydaktyka/Wyklady/IO/Laboratory classes/projekt/ioprojectarchitecture/src/main/java/pl/put/poznan/transformer/app/TextTransformerApplication.java
-/Users/mochodek/Documents/Dydaktyka/Wyklady/IO/Laboratory classes/projekt/ioprojectarchitecture/src/main/java/pl/put/poznan/transformer/logic/TextTransformer.java
-/Users/mochodek/Documents/Dydaktyka/Wyklady/IO/Laboratory classes/projekt/ioprojectarchitecture/src/main/java/pl/put/poznan/transformer/rest/TextTransformerController.java
+C:\Users\janek\OneDrive\Pulpit\Semestr5\IO\Sprint1\src\main\java\pl\put\poznan\buildinginfo\logic\Building.java
+C:\Users\janek\OneDrive\Pulpit\Semestr5\IO\Sprint1\src\main\java\pl\put\poznan\buildinginfo\logic\RestController.java
+C:\Users\janek\OneDrive\Pulpit\Semestr5\IO\Sprint1\src\main\java\pl\put\poznan\buildinginfo\app\BuildingInfoApp.java
+C:\Users\janek\OneDrive\Pulpit\Semestr5\IO\Sprint1\src\main\java\pl\put\poznan\buildinginfo\logic\Floor.java
+C:\Users\janek\OneDrive\Pulpit\Semestr5\IO\Sprint1\src\main\java\pl\put\poznan\buildinginfo\logic\BuildingRepository.java
+C:\Users\janek\OneDrive\Pulpit\Semestr5\IO\Sprint1\src\main\java\pl\put\poznan\buildinginfo\logic\Room.java

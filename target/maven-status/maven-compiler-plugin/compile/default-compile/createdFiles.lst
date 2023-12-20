@@ -1,0 +1,6 @@
+pl\put\poznan\buildinginfo\logic\Room.class
+pl\put\poznan\buildinginfo\logic\Floor.class
+pl\put\poznan\buildinginfo\logic\Building.class
+pl\put\poznan\buildinginfo\logic\BuildingRepository.class
+pl\put\poznan\buildinginfo\logic\RestController.class
+pl\put\poznan\buildinginfo\app\BuildingInfoApp.class
