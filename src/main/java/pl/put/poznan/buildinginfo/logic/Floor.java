@@ -1,34 +1,81 @@
 package pl.put.poznan.buildinginfo.logic;
 
+
 import java.util.List;
 
-// • Lokacja to budynek, poziom, lub pomieszczenie
-// • Budynek może składać się z poziomów a te z pomieszczeń
-// • Każda lokalizacja jest charakteryzowana przez:
-//     o id – unikalny identyfikator
-//    o name – opcjonalna nazwa lokalizacji
-// • Pomieszczenie dodatkowo jest charakteryzowane przez:
-//    o area = powierzchnia w m^2
-//    o cube = kubatura pomieszczenia w m^3
-//    o heating = poziom zużycia energii ogrzewania (float)
-//    o light – łączna moc oświetlenia
 public class Floor {
-    int id;
-    String name;
-    List <Room> rooms;
+    private int id;
+    private String name;
+
+    private int level;
+    private List<Room> rooms;
+
     public Floor(int id, String name) {
         this.id = id;
         this.name = name;
     }
-    void setName(String name) {
-        this.name = name;
+
+    public double calculateVolume() {
+        double totalVolume = 0;
+        for (Room room : rooms) {
+            totalVolume += room.getCube(); // Assuming the method is named calculateVolume
+        }
+        return totalVolume;
     }
-    int getId() {
+
+    public double calculateTotalArea() {
+        double totalArea = 0;
+        for (Room room : rooms) {
+            totalArea += room.getArea(); // Assuming the method is named calculateArea
+        }
+        return totalArea;
+    }
+
+    public double calculateTotalLightingPower() {
+        double lightingPower = rooms.stream()
+                .mapToDouble(Room::getLightingPower)
+                .sum();
+        return lightingPower;
+    }
+    public double calculateAverageLightingPowerDensity() {
+        double levelArea = rooms.stream()
+                .mapToDouble(Room::getArea  )
+                .sum();
+        double lightingPower = rooms.stream()
+                .mapToDouble(Room::getLightingPower)
+                .sum();
+        if (levelArea == 0) return 0;
+        return lightingPower / levelArea;
+    }
+
+    // Getters and setters
+    public int getId() {
         return id;
     }
-    String getName() {
+
+    public String getName() {
         return name;
     }
-    
 
+    public int getLevel(){
+        return level;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    // Assuming a setter for rooms
+    public void setRooms(List<Room> rooms) {
+        this.rooms = rooms;
+    }
+
+    // Assuming a getter for rooms
+    public List<Room> getRooms() {
+        return rooms;
+    }
 }

@@ -1,64 +1,81 @@
 package pl.put.poznan.buildinginfo.logic;
-// • Lokacja to budynek, poziom, lub pomieszczenie
-// • Budynek może składać się z poziomów a te z pomieszczeń
-// • Każda lokalizacja jest charakteryzowana przez:
-//     o id – unikalny identyfikator
-//    o name – opcjonalna nazwa lokalizacji
-// • Pomieszczenie dodatkowo jest charakteryzowane przez:
-//    o area = powierzchnia w m^2
-//    o cube = kubatura pomieszczenia w m^3
-//    o heating = poziom zużycia energii ogrzewania (float)
-//    o light – łączna moc oświetlenia
+
 public class Room {
-        
-    int id;
-    String name;
-    float area;
-    float cube;
-    float heating;
-    float light;
-    public Room(int id, String name, float area, float cube, float heating, float light) {
+    private int id;
+    private String name;
+    private double area;
+    private double cube;
+    private int level; // Attribute representing the level of the room
+
+    private double lightingPower;
+
+    private float heatingEnergyConsumption;
+
+
+    public Room(int id, String name, double area, double cube, int level, double lightingPower, float heatingEnergyConsumption) {
         this.id = id;
         this.name = name;
         this.area = area;
         this.cube = cube;
-        this.heating = heating;
-        this.light = light;
+        this.level = level;
+        this.lightingPower = lightingPower;
+        this.heatingEnergyConsumption = heatingEnergyConsumption;
     }
-    public int getId() {
-        return id;
-    }
+
+
+//    public double calculateHeatingEnergyPerVolume() {
+//        double volume = calculateVolume();
+//        if (volume == 0) return 0;
+//        return heatingEnergyConsumption / volume;
+//    }
+
+    // Getters
     public String getName() {
         return name;
     }
-    public float getArea() {
+
+    public double getArea() {
         return area;
     }
-    public float getCube() {
+
+    public double getCube() {
         return cube;
     }
-    public float getHeating() {
-        return heating;
+
+    public int getLevel() {
+        return level;
     }
-    public float getLight() {
-        return light;
+
+    public double getLightingPower() {
+        return lightingPower;
     }
-    
+
+//    public double getHeatingEnergyConsumption() {
+//        return heatingEnergyConsumption;
+//    }
+
+    // Setters
     public void setName(String name) {
-        this.name= name;
+        this.name = name;
     }
-    public void setArea(float area) {
+
+    public void setArea(double length) {
         this.area = area;
     }
-    public void setCube(float cube) {
+
+    public void setCube(double width) {
         this.cube = cube;
     }
-    public void setHeating(float heating) {
-        this.heating = heating;
-    }
-    public void setLight(float light) {
-        this.light = light;
+
+    public void setLevel(int level) {
+        this.level = level;
     }
 
+    public void setLightingPower(double lightingPower) {
+        this.lightingPower = lightingPower;
+    }
 
+//    public void setHeatingEnergyConsumption(double heatingEnergyConsumption) {
+//        this.heatingEnergyConsumption = heatingEnergyConsumption;
+//    }
 }
