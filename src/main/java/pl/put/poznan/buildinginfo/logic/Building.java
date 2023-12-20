@@ -1,6 +1,6 @@
 package pl.put.poznan.buildinginfo.logic;
 
-import java.util.ArrayList;
+
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -12,10 +12,10 @@ public class Building {
     private String name;
     private List<Floor> floors;
 
-    public Building(String name) {
+    public Building(String name,int id) {
         this.id = id;
         this.name = name;
-        this.floors = new ArrayList<>();
+        
     }
 
     public void addFloor(Floor floor) {
@@ -23,35 +23,19 @@ public class Building {
     }
 
     public double calculateTotalVolume() {
-        Map<Integer, Double> volumeByLevel = new HashMap<>();
-
+        double totalArea = 0;
         for (Floor floor : floors) {
-            volumeByLevel.merge(floor.getLevel(), floor.calculateVolume(), Double::sum);
+            totalArea += floor.calculateVolume();
         }
-
-        // Sum the volumes of each level
-        double totalVolume = 0;
-        for (double levelVolume : volumeByLevel.values()) {
-            totalVolume += levelVolume;
-        }
-
-        return totalVolume;
+        return totalArea;
     }
 
 
-//    public double calculateAreaByLevel(int level) {
-//        double totalArea = 0;
-//        for (Floor floor : floors) {
-//            if (level == floor.getLevel()) {
-//                totalArea += floor.calculateTotalArea();
-//            }
-//        }
-//        return totalArea;
-//    }
+
     public double calculateTotalArea() {
         double totalArea = 0;
         for (Floor floor : floors) {
-            totalArea += floor.calculateTotalArea(); // Assuming each floor has a calculateTotalArea method
+            totalArea += floor.calculateTotalArea(); 
         }
         return totalArea;
     }
@@ -64,9 +48,8 @@ public class Building {
         double totalLightingPower = 0;
 
         for (Floor floor : floors) {
-            double floorArea = floor.calculateTotalArea(); // Assuming each floor has a method to calculate its total area
-            double floorLightingPower = floor.calculateTotalLightingPower(); // Assuming each floor has a method to calculate its total lighting power
-
+            double floorArea = floor.calculateTotalArea(); 
+            double floorLightingPower = floor.calculateTotalLightingPower(); 
             totalArea += floorArea;
             totalLightingPower += floorLightingPower;
         }
@@ -82,33 +65,6 @@ public class Building {
 
 
 
-//    public double calculateTotalHeatingEnergyPerVolume() {
-//        double totalVolume = calculateTotalVolume();
-//        double totalHeatingEnergy = rooms.stream()
-//                .mapToDouble(Room::getHeatingEnergyConsumption)
-//                .sum();
-//        if (totalVolume == 0) return 0;
-//        return totalHeatingEnergy / totalVolume;
-//    }
-
-//    public double calculateHeatingEnergyPerVolumeByLevel(int level) {
-//        double levelVolume = 0;
-//        double levelHeatingEnergy = 0;
-//        for (Room room : rooms) {
-//            if (room.getLevel() == level) {
-//                levelVolume += room.calculateVolume();
-//                levelHeatingEnergy += room.getHeatingEnergyConsumption();
-//            }
-//        }
-//        if (levelVolume == 0) return 0;
-//        return levelHeatingEnergy / levelVolume;
-//    }
-//
-//    public List<Room> findRoomsExceedingEnergyUsage(double energyUsageThreshold) {
-//        return rooms.stream()
-//                .filter(room -> room.calculateHeatingEnergyPerVolume() > energyUsageThreshold)
-//                .collect(Collectors.toList());
-//    }
 
     // Getters
     public String getName() {
@@ -123,6 +79,10 @@ public class Building {
     // Setters
     public void setName(String name) {
         this.name = name;
+    }
+
+    public void setId(int id){
+        this.id = id;
     }
 
 

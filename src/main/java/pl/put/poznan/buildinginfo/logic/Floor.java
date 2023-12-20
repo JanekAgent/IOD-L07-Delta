@@ -18,7 +18,7 @@ public class Floor {
     public double calculateVolume() {
         double totalVolume = 0;
         for (Room room : rooms) {
-            totalVolume += room.getCube(); // Assuming the method is named calculateVolume
+            totalVolume += room.getCube(); 
         }
         return totalVolume;
     }
@@ -26,7 +26,7 @@ public class Floor {
     public double calculateTotalArea() {
         double totalArea = 0;
         for (Room room : rooms) {
-            totalArea += room.getArea(); // Assuming the method is named calculateArea
+            totalArea += room.getArea(); 
         }
         return totalArea;
     }
@@ -37,6 +37,7 @@ public class Floor {
                 .sum();
         return lightingPower;
     }
+
     public double calculateAverageLightingPowerDensity() {
         double levelArea = rooms.stream()
                 .mapToDouble(Room::getArea  )
