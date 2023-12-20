@@ -9,10 +9,9 @@ import java.util.List;
  * The class provides methods to calculate the volume, total area, total lighting power,
  * and average lighting power density of the rooms on the floor.
  */
-public class Floor {
+public class Floor implements ILocation {
     private int id;
     private String name;
-
     private List<Room> rooms;
 
     /**
@@ -24,7 +23,7 @@ public class Floor {
     public Floor(int id, String name) {
         this.id = id;
         this.name = name;
-        this.rooms = rooms;
+        
     }
     
     /**
