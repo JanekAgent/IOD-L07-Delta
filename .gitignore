@@ -24,3 +24,10 @@ hs_err_pid*
 replay_pid*
 .vscode/settings.json
 /.idea/
+target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst
+target/classes/application.properties
+target/maven-archiver/pom.properties
+target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst
+target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst
+.gitignore
+target/buildinginfo-0.4.0.jar.original
