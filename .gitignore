@@ -24,3 +24,7 @@ hs_err_pid*
 replay_pid*
 .vscode/settings.json
 /.idea/
+.DS_Store
+.DS_Store
+.DS_Store
+.gitignore

@@ -1,27 +1,26 @@
 package pl.put.poznan.buildinginfo.logic;
 
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
-import java.util.stream.Collectors;
 
-public class Building {
+public class Building implements ILocation {
 
     private int id;
     private String name;
     private List<Floor> floors;
 
-    public Building(String name,int id) {
+    public Building(String name, int id, List<Floor> floors) {
         this.id = id;
         this.name = name;
+        this.floors = floors;
     }
 
     public void addFloor(Floor floor) {
         floors.add(floor);
     }
 
-    public double calculateTotalVolume() {
+    @Override
+    public double calculateVolume() {
         double totalArea = 0;
         for (Floor floor : floors) {
             totalArea += floor.calculateVolume();
@@ -30,15 +29,14 @@ public class Building {
     }
 
 
-
-    public double calculateTotalArea() {
+    @Override
+    public double calculateArea() {
         double totalArea = 0;
         for (Floor floor : floors) {
-            totalArea += floor.calculateTotalArea();
+            totalArea += floor.calculateArea();
         }
         return totalArea;
     }
-
 
 
     public double calculateAverageLightingPowerDensity() {
@@ -47,8 +45,8 @@ public class Building {
         double totalLightingPower = 0;
 
         for (Floor floor : floors) {
-            double floorArea = floor.calculateTotalArea();
-            double floorLightingPower = floor.calculateTotalLightingPower();
+            double floorArea = floor.calculateArea();
+            double floorLightingPower = floor.calculateLightingPower();
             totalArea += floorArea;
             totalLightingPower += floorLightingPower;
         }

@@ -3,18 +3,18 @@ package pl.put.poznan.buildinginfo.logic;
 
 import java.util.List;
 
-public class Floor {
+public class Floor implements ILocation {
     private int id;
     private String name;
 
-    private int level;
     private List<Room> rooms;
 
-    public Floor(int id, String name) {
+    public Floor(int id, String name, List<Room> rooms) {
         this.id = id;
         this.name = name;
+        this.rooms = rooms;
     }
-
+    @Override
     public double calculateVolume() {
         double totalVolume = 0;
         for (Room room : rooms) {
@@ -22,20 +22,20 @@ public class Floor {
         }
         return totalVolume;
     }
-
-    public double calculateTotalArea() {
+    @Override
+    public double calculateArea() {
         double totalArea = 0;
         for (Room room : rooms) {
             totalArea += room.getArea();
         }
         return totalArea;
     }
-
-    public double calculateTotalLightingPower() {
-        double lightingPower = rooms.stream()
-                .mapToDouble(Room::getLightingPower)
-                .sum();
-        return lightingPower;
+    public double calculateLightingPower() {
+        double totalLightingPower = 0;
+        for (Room room : rooms) {
+            totalLightingPower += room.getLightingPower();
+        }
+        return totalLightingPower;
     }
 
     public double calculateAverageLightingPowerDensity() {
@@ -56,10 +56,6 @@ public class Floor {
 
     public String getName() {
         return name;
-    }
-
-    public int getLevel(){
-        return level;
     }
 
     public void setId(int id) {
