@@ -18,7 +18,7 @@ public class Floor {
     public double calculateVolume() {
         double totalVolume = 0;
         for (Room room : rooms) {
-            totalVolume += room.getCube(); 
+            totalVolume += room.getCube();
         }
         return totalVolume;
     }
@@ -26,7 +26,7 @@ public class Floor {
     public double calculateTotalArea() {
         double totalArea = 0;
         for (Room room : rooms) {
-            totalArea += room.getArea(); 
+            totalArea += room.getArea();
         }
         return totalArea;
     }

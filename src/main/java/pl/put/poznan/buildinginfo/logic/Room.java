@@ -5,7 +5,7 @@ public class Room {
     private String name;
     private double area;
     private double cube;
-    
+
 
     private double lightingPower;
 
@@ -17,7 +17,7 @@ public class Room {
         this.name = name;
         this.area = area;
         this.cube = cube;
-        
+
         this.lightingPower = lightingPower;
         this.heatingEnergyConsumption = heatingEnergyConsumption;
     }
@@ -47,7 +47,7 @@ public class Room {
     }
 
 
-    
+
 
     public double getLightingPower() {
         return lightingPower;
@@ -71,7 +71,7 @@ public class Room {
         this.cube = cube;
     }
 
-   
+
 
     public void setLightingPower(float lightingPower) {
         this.lightingPower = lightingPower;

@@ -15,7 +15,6 @@ public class Building {
     public Building(String name,int id) {
         this.id = id;
         this.name = name;
-        
     }
 
     public void addFloor(Floor floor) {
@@ -35,7 +34,7 @@ public class Building {
     public double calculateTotalArea() {
         double totalArea = 0;
         for (Floor floor : floors) {
-            totalArea += floor.calculateTotalArea(); 
+            totalArea += floor.calculateTotalArea();
         }
         return totalArea;
     }
@@ -48,13 +47,12 @@ public class Building {
         double totalLightingPower = 0;
 
         for (Floor floor : floors) {
-            double floorArea = floor.calculateTotalArea(); 
-            double floorLightingPower = floor.calculateTotalLightingPower(); 
+            double floorArea = floor.calculateTotalArea();
+            double floorLightingPower = floor.calculateTotalLightingPower();
             totalArea += floorArea;
             totalLightingPower += floorLightingPower;
         }
 
-        // Calculate the average lighting power density for the entire building
         if (totalArea > 0) {
             totalAverageDensity = totalLightingPower / totalArea;
         }
