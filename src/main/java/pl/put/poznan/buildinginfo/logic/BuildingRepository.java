@@ -4,6 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 
+/**
+ * The BuildingRepository class represents a repository for managing buildings.
+ * It provides methods for adding, updating, deleting, and retrieving buildings.
+ */
 @Repository
 public class BuildingRepository {
     private List<Building> buildings;

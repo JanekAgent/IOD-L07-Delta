@@ -20,6 +20,9 @@ import pl.put.poznan.buildinginfo.logic.BuildingRepository;
 //    o heating = poziom zużycia energii ogrzewania (float)
 //    o light – łączna moc oświetlenia
 // @RestController
+/**
+ * This class represents a REST controller for managing buildings.
+ */
 @RequestMapping("/api/buildings")
 public class RestController {
     @Autowired

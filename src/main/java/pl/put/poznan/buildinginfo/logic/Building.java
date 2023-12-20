@@ -12,6 +12,9 @@ package pl.put.poznan.buildinginfo.logic;
 
 import java.util.List;
 
+/**
+ * Represents a building.
+ */
 public class Building {
     private String name;
     

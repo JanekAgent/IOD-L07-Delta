@@ -10,7 +10,7 @@ package pl.put.poznan.buildinginfo.logic;
 //    o heating = poziom zużycia energii ogrzewania (float)
 //    o light – łączna moc oświetlenia
 public class Room {
-    
+        
     int id;
     String name;
     float area;
