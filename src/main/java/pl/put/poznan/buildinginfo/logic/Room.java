@@ -5,19 +5,17 @@ public class Room {
     private String name;
     private double area;
     private double cube;
-    private int level; // Attribute representing the level of the room
 
     private double lightingPower;
 
     private float heatingEnergyConsumption;
 
 
-    public Room(int id, String name, double area, double cube, int level, double lightingPower, float heatingEnergyConsumption) {
+    public Room(int id, String name, double area, double cube, double lightingPower, float heatingEnergyConsumption) {
         this.id = id;
         this.name = name;
         this.area = area;
         this.cube = cube;
-        this.level = level;
         this.lightingPower = lightingPower;
         this.heatingEnergyConsumption = heatingEnergyConsumption;
     }
@@ -42,9 +40,6 @@ public class Room {
         return cube;
     }
 
-    public int getLevel() {
-        return level;
-    }
 
     public double getLightingPower() {
         return lightingPower;
@@ -59,17 +54,14 @@ public class Room {
         this.name = name;
     }
 
-    public void setArea(double length) {
+    public void setArea(double area) {
         this.area = area;
     }
 
-    public void setCube(double width) {
+    public void setCube(double cube) {
         this.cube = cube;
     }
 
-    public void setLevel(int level) {
-        this.level = level;
-    }
 
     public void setLightingPower(double lightingPower) {
         this.lightingPower = lightingPower;

@@ -12,7 +12,7 @@ public class Building {
     private String name;
     private List<Floor> floors;
 
-    public Building(String name) {
+    public Building(int id, String name, List<Floor> floors) {
         this.id = id;
         this.name = name;
         this.floors = new ArrayList<>();
@@ -64,14 +64,13 @@ public class Building {
         double totalLightingPower = 0;
 
         for (Floor floor : floors) {
-            double floorArea = floor.calculateTotalArea(); // Assuming each floor has a method to calculate its total area
-            double floorLightingPower = floor.calculateTotalLightingPower(); // Assuming each floor has a method to calculate its total lighting power
+            double floorArea = floor.calculateTotalArea();
+            double floorLightingPower = floor.calculateTotalLightingPower();
 
             totalArea += floorArea;
             totalLightingPower += floorLightingPower;
         }
 
-        // Calculate the average lighting power density for the entire building
         if (totalArea > 0) {
             totalAverageDensity = totalLightingPower / totalArea;
         }
