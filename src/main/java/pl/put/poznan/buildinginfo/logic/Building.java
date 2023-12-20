@@ -1,6 +1,7 @@
 package pl.put.poznan.buildinginfo.logic;
 
 
+
 import java.util.List;
 
 public class Building implements ILocation {

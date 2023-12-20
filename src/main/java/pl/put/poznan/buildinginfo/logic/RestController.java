@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 // import org.springframework.web.bind.annotation.RestController;
-import pl.put.poznan.buildinginfo.logic.BuildingRepository;
+
 // o Wejście w formacie JSON odpowiadające strukturze budynku (listy, słowniki)
 // o Wejście transformowane do postaci modelu obiektowego 
 // o Wyjście w formacie JSON
