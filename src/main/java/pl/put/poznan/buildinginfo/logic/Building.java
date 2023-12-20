@@ -14,14 +14,14 @@ import java.util.List;
 
 public class Building {
     private String name;
-    private String address;
+    
 
     private List<Floor> floors;
     private int id;
 
-    public Building(String name, String address) {
+    public Building(String name) {
         this.name = name;
-        this.address = address;
+        
         
     }
 
@@ -29,9 +29,7 @@ public class Building {
         return name;
     }
 
-    public String getAddress() {
-        return address;
-    }
+    
 
    
 
@@ -39,9 +37,7 @@ public class Building {
         this.name = name;
     }
 
-    public void setAddress(String address) {
-        this.address = address;
-    }
+   
 
     
 
