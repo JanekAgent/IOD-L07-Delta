@@ -44,7 +44,7 @@ public class RestController {
                                             @RequestBody Building buildingDetails) {
         Building building = BuildingRepository.findById(buildingId);
         building.setName(buildingDetails.getName());
-        building.setAddress(buildingDetails.getAddress());
+        
         // building.setFloors(buildingDetails.getFloors());
         
         BuildingRepository.updateBuilding(1, building);
