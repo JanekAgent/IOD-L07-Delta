@@ -84,6 +84,24 @@ public class Floor implements ILocation {
 
     // Getters and setters are not documented
 
+    public Room addRoom(Room room) {
+        rooms.add(room);
+        return room;
+    }
+    public Room getRoomById(int roomId) {
+        for (Room room : rooms) {
+            if (room.getId() == roomId) {
+                return room;
+            }
+        }
+        return null;
+    }
+
+    public void deleteRoom(int roomId) {
+        rooms.removeIf(room -> room.getId() == roomId);
+    }
+
+
     public int getId() {
         return id;
     }
@@ -105,6 +123,7 @@ public class Floor implements ILocation {
     public void setRooms(List<Room> rooms) {
         this.rooms = rooms;
     }
+
 
 
     // Assuming a getter for rooms
