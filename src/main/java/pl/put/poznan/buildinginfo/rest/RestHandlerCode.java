@@ -12,8 +12,10 @@ import pl.put.poznan.buildinginfo.logic.Room;
 import java.util.List;
 // import org.springframework.web.bind.annotation.RestController;
 
+
 /**
- * This class represents a REST controller for managing buildings.
+ * This class represents the REST API handler for managing buildings, floors, and rooms.
+ * It provides endpoints for retrieving, creating, updating, and deleting building, floor, and room data.
  */
 @RestController
 @RequestMapping("/api")
@@ -135,7 +137,7 @@ public class RestHandlerCode {
         Floor floor = building.getFloorById(floorId);
         Room room = floor.getRoomById(roomId);
         room.setName(roomDetails.getName());
-        // Update other room details if needed
+        
     }
     
     @DeleteMapping("/{buildingId}/floors/{floorId}/rooms/{roomId}")
