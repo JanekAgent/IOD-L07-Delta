@@ -1,8 +1,4 @@
 package pl.put.poznan.buildinginfo.logic;
-import org.springframework.beans.factory.annotation.Configurable;
-import org.springframework.boot.autoconfigure.batch.BatchDataSource;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Repository;
 import java.util.ArrayList;
 import java.util.List;
