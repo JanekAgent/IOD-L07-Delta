@@ -1,7 +1,14 @@
-package pl.put.poznan.buildinginfo.logic;
+package pl.put.poznan.buildinginfo.rest;
+
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import pl.put.poznan.buildinginfo.logic.BuildingRepository;
+import pl.put.poznan.buildinginfo.logic.Building;
+import pl.put.poznan.buildinginfo.logic.Floor;
+import pl.put.poznan.buildinginfo.logic.Room;
+
 import java.util.List;
 // import org.springframework.web.bind.annotation.RestController;
 
@@ -9,14 +16,20 @@ import java.util.List;
  * This class represents a REST controller for managing buildings.
  */
 @RestController
-@RequestMapping("/api/buildings")
+@RequestMapping("/api")
 public class RestHandlerCode {
     @Autowired
     private BuildingRepository BuildingRepository;
     
-    @GetMapping
+    @GetMapping("/buildings")
     public List<Building> getAllBuildings() {
+        System.out.println("getAllBuildings");
         return BuildingRepository.findAll();
+    }
+    @GetMapping("/test")   
+    public String test() {
+        System.out.println("test");
+        return "test";
     }
     
     @GetMapping("/{id}")
@@ -85,7 +98,7 @@ public class RestHandlerCode {
         building.deleteFloor(floorId);
     }
     
-    // Add missing methods here
+    
     
     @GetMapping("/{buildingId}/floors/{floorId}/rooms")
     public List<Room> getAllRooms(@PathVariable(value = "buildingId") int buildingId,
@@ -132,6 +145,15 @@ public class RestHandlerCode {
         Building building = BuildingRepository.findById(buildingId);
         Floor floor = building.getFloorById(floorId);
         floor.deleteRoom(roomId);
+    }
+    @GetMapping("/{buildingId}/floors/{floorId}/rooms/{roomId}/powerDensity")
+    public double getRoomPowerDensity(@PathVariable(value = "buildingId") int buildingId,
+                           @PathVariable(value = "floorId") int floorId,
+                           @PathVariable(value = "roomId") int roomId) {
+        Building building = BuildingRepository.findById(buildingId);
+        Floor floor = building.getFloorById(floorId);
+        Room room = floor.getRoomById(roomId);
+        return room.calculateLightingPowerDensity();
     }
     
     
