@@ -39,3 +39,4 @@ target/classes/application.properties
 .DS_Store
 .DS_Store
 .gitignore
+test.json

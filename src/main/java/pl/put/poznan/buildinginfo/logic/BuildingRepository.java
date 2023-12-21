@@ -1,4 +1,8 @@
 package pl.put.poznan.buildinginfo.logic;
+import org.springframework.beans.factory.annotation.Configurable;
+import org.springframework.boot.autoconfigure.batch.BatchDataSource;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Repository;
 import java.util.ArrayList;
 import java.util.List;
@@ -8,9 +12,16 @@ import java.util.List;
  * The BuildingRepository class represents a repository for managing buildings.
  * It provides methods for adding, updating, deleting, and retrieving buildings.
  */
+
 @Repository
+
 public class BuildingRepository {
     private List<Building> buildings;
+    
+    public BuildingRepository buildingRepository() {
+        System.out.println("BuildingRepository");
+        return new BuildingRepository();
+    }
 
     public BuildingRepository() {
         buildings = new ArrayList<>();
