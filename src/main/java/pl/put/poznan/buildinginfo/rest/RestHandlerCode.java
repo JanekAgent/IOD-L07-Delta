@@ -90,7 +90,7 @@ public class RestHandlerCode {
         Building building = BuildingRepository.findById(buildingId);
         Floor floor = building.getFloorById(floorId);
         floor.setName(floorDetails.getName());
-        // Update other floor details if needed
+        
     }
     
     @DeleteMapping("/{buildingId}/floors/{floorId}")
@@ -157,6 +157,7 @@ public class RestHandlerCode {
         Room room = floor.getRoomById(roomId);
         return room.calculateLightingPowerDensity();
     }
+    
     
     
 }
