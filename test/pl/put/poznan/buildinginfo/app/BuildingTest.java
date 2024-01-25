@@ -5,11 +5,12 @@ import org.junit.jupiter.api.Test;
 
 import static org.unit.jupiter.api.Assertions.*;
 class BuildingTest{
-    private building building;
+    private Building building;
     @BeforeEach
     void setUp(){
-        building = new building("test", 1, null);
+        building = new Building("test", 1, null);
     }
+
     @Test
     void testGetFloor(){
         assertEquals(null, building.getFloor(1));
