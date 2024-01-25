@@ -1,6 +1,7 @@
 package pl.put.poznan.buildinginfo.logic;
 
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -23,6 +24,7 @@ public class Floor implements ILocation {
     public Floor(int id, String name) {
         this.id = id;
         this.name = name;
+        this.rooms = new ArrayList<>();
         
     }
     

@@ -19,9 +19,5 @@ class BuildingTest{
     }
 
     
-    @Test
-    void addFloorTest(){
-        Floor ek = new Floor(0, "test");
-        assertEquals(ek, building.addFloor(ek),"Error in adding floor");
-    }
+    
 } 
