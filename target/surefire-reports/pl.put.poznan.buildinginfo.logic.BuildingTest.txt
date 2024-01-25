@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: pl.put.poznan.buildinginfo.logic.BuildingTest
 -------------------------------------------------------------------------------
-Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.297 s - in pl.put.poznan.buildinginfo.logic.BuildingTest
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.772 s - in pl.put.poznan.buildinginfo.logic.BuildingTest

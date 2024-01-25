@@ -53,11 +53,11 @@ class BuildingTest{
     @Test
     void addFloorTest(){
         Floor floor= new Floor(1, null);
-        assertEquals(floor, building.addFloor(floor));
+        assertEquals(floor, building.addFloor(floor), "The added floor should be equal to the floor returned by the method.");
     }
     @Test
     void calculateVolumeTest(){
-        assertEquals(241, building.calculateVolume());
+        assertEquals(241, building.calculateVolume(), "The calculated volume should be equal to 241.");
     }
 
     @Test
@@ -70,7 +70,7 @@ class BuildingTest{
         when(floor5Mock.calculateVolume()).thenReturn(500.0);
 
         
-        assertEquals(1741, building.calculateVolume());
+        assertEquals(1741, building.calculateVolume(), "The calculated volume should be equal to 1741.");
 
 
         verify(floor1Mock).calculateVolume();
@@ -82,25 +82,25 @@ class BuildingTest{
 
     @Test
     void calculateAreaTest(){
-        assertEquals(121, building.calculateArea());
+        assertEquals(121, building.calculateArea(), "The calculated area should be equal to 121.");
     }
     @Test
     void calcluateLightPowerDensityTest(){
-        assertEquals(2.9834710743801653, building.calculateAverageLightingPowerDensity());
+        assertEquals(2.9834710743801653, building.calculateAverageLightingPowerDensity(), "The calculated average lighting power density should be equal to 2.9834710743801653.");
     }
     @Test
     void getFloorByIdTest(){
         Floor floor = new Floor(123, null);
         building.addFloor(floor);
-        assertEquals(floor, building.getFloorById(123));
+        assertEquals(floor, building.getFloorById(123), "The retrieved floor should be equal to the floor added to the building.");
     }
     @Test 
     void deleteFloor(){
         Floor floor = new Floor(123, null);
         building.addFloor(floor);
-        assertEquals(floor, building.getFloorById(123));
+        assertEquals(floor, building.getFloorById(123), "The retrieved floor should be equal to the floor added to the building.");
         building.deleteFloor(123);
-        assertEquals(null, building.getFloorById(123));
+        assertEquals(null, building.getFloorById(123), "The retrieved floor should be null after deleting the floor.");
     }
     
-} 
+}
