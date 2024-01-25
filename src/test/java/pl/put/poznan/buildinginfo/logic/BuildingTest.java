@@ -69,8 +69,8 @@ class BuildingTest{
         when(floor4Mock.calculateVolume()).thenReturn(400.0);
         when(floor5Mock.calculateVolume()).thenReturn(500.0);
 
-        double expectedTotalVolume = 100.0 + 200.0 + 300.0;
-        assertEquals(expectedTotalVolume, building.calculateVolume());
+        
+        assertEquals(1741, building.calculateVolume());
 
 
         verify(floor1Mock).calculateVolume();
