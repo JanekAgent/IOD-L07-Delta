@@ -23,6 +23,10 @@ class BuildingTest{
     private Floor floor2Mock;
     @Mock
     private Floor floor3Mock;
+    @Mock
+    private Floor floor4Mock;
+    @Mock
+    private Floor floor5Mock;
 
     @BeforeEach
     void setUp(){
@@ -31,6 +35,8 @@ class BuildingTest{
         floors.add(floor1Mock);
         floors.add(floor2Mock);
         floors.add(floor3Mock);
+        floors.add(floor4Mock);
+        floors.add(floor5Mock);
 
         Floor floor = new Floor(1, "test1");
         Floor floor2 = new Floor(2,"test2");
@@ -60,6 +66,8 @@ class BuildingTest{
         when(floor1Mock.calculateVolume()).thenReturn(100.0);
         when(floor2Mock.calculateVolume()).thenReturn(200.0);
         when(floor3Mock.calculateVolume()).thenReturn(300.0);
+        when(floor4Mock.calculateVolume()).thenReturn(400.0);
+        when(floor5Mock.calculateVolume()).thenReturn(500.0);
 
         double expectedTotalVolume = 100.0 + 200.0 + 300.0;
         assertEquals(expectedTotalVolume, building.calculateVolume());
@@ -68,6 +76,8 @@ class BuildingTest{
         verify(floor1Mock).calculateVolume();
         verify(floor2Mock).calculateVolume();
         verify(floor3Mock).calculateVolume();
+        verify(floor4Mock).calculateVolume();
+        verify(floor5Mock).calculateVolume();
     }
 
     @Test
