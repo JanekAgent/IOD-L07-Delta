@@ -2,6 +2,9 @@ package pl.put.poznan.buildinginfo.logic;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.mockito.Mock;
+import org.mockito.MockitoAnnotations;
+import static org.mockito.Mockito.*;
 import org.junit.jupiter.api.BeforeAll;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -13,9 +16,22 @@ import java.util.List;
 class BuildingTest{
     private Building building;
     private List<Floor> floors;
+
+    @Mock
+    private Floor floor1Mock;
+    @Mock
+    private Floor floor2Mock;
+    @Mock
+    private Floor floor3Mock;
+
     @BeforeEach
     void setUp(){
+        MockitoAnnotations.initMocks(this);
         floors= new ArrayList<>();
+        floors.add(floor1Mock);
+        floors.add(floor2Mock);
+        floors.add(floor3Mock);
+
         Floor floor = new Floor(1, "test1");
         Floor floor2 = new Floor(2,"test2");
         Floor floor3 = new Floor(3,"test3");
@@ -37,6 +53,23 @@ class BuildingTest{
     void calculateVolumeTest(){
         assertEquals(241, building.calculateVolume());
     }
+
+    @Test
+    void calculateVolumeTest2() {
+
+        when(floor1Mock.calculateVolume()).thenReturn(100.0);
+        when(floor2Mock.calculateVolume()).thenReturn(200.0);
+        when(floor3Mock.calculateVolume()).thenReturn(300.0);
+
+        double expectedTotalVolume = 100.0 + 200.0 + 300.0;
+        assertEquals(expectedTotalVolume, building.calculateVolume());
+
+
+        verify(floor1Mock).calculateVolume();
+        verify(floor2Mock).calculateVolume();
+        verify(floor3Mock).calculateVolume();
+    }
+
     @Test
     void calculateAreaTest(){
         assertEquals(121, building.calculateArea());
