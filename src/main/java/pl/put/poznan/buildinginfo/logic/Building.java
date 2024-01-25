@@ -5,7 +5,7 @@ package pl.put.poznan.buildinginfo.logic;
 import java.util.List;
 
 /**
- * The Building class represents a building.
+ * The Building class represents a building. Test
  * It contains information about the building's id, name, and floors.
  */
 public class Building implements ILocation {
