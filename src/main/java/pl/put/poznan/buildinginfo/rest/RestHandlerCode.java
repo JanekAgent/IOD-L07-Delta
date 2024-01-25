@@ -157,7 +157,109 @@ public class RestHandlerCode {
         Room room = floor.getRoomById(roomId);
         return room.calculateLightingPowerDensity();
     }
+    @GetMapping("/{buildingId}/floors/{floorId}/rooms/{roomId}/heatingEnergyConsumption")
+    public double getRoomHeatingEnergyConsumption(@PathVariable(value = "buildingId") int buildingId,
+                           @PathVariable(value = "floorId") int floorId,
+                           @PathVariable(value = "roomId") int roomId) {
+        Building building = BuildingRepository.findById(buildingId);
+        Floor floor = building.getFloorById(floorId);
+        Room room = floor.getRoomById(roomId);
+        return room.getHeatingEnergyConsumption();
+    }
+    @GetMapping("/{buildingId}/floors/{floorId}/rooms/{roomId}/cube")
+    public double getRoomCube(@PathVariable(value = "buildingId") int buildingId,
+                           @PathVariable(value = "floorId") int floorId,
+                           @PathVariable(value = "roomId") int roomId) {
+        Building building = BuildingRepository.findById(buildingId);
+        Floor floor = building.getFloorById(floorId);
+        Room room = floor.getRoomById(roomId);
+        return room.getCube();
+    }
+    @GetMapping("/{buildingId}/floors/{floorId}/rooms/{roomId}/area")
+    public double getRoomArea(@PathVariable(value = "buildingId") int buildingId,
+                           @PathVariable(value = "floorId") int floorId,
+                           @PathVariable(value = "roomId") int roomId) {
+        Building building = BuildingRepository.findById(buildingId);
+        Floor floor = building.getFloorById(floorId);
+        Room room = floor.getRoomById(roomId);
+        return room.getArea();
+    }
+    @GetMapping("/{buildingId}/floors/{floorId}/rooms/{roomId}/lightingPower")
+    public double getRoomLightingPower(@PathVariable(value = "buildingId") int buildingId,
+                           @PathVariable(value = "floorId") int floorId,
+                           @PathVariable(value = "roomId") int roomId) {
+        Building building = BuildingRepository.findById(buildingId);
+        Floor floor = building.getFloorById(floorId);
+        Room room = floor.getRoomById(roomId);
+        return room.getLightingPower();
+    }
+    @GetMapping("/{buildingId}/floors/{floorId}/rooms/{roomId}/name")
+    public String getRoomName(@PathVariable(value = "buildingId") int buildingId,
+                           @PathVariable(value = "floorId") int floorId,
+                           @PathVariable(value = "roomId") int roomId) {
+        Building building = BuildingRepository.findById(buildingId);
+        Floor floor = building.getFloorById(floorId);
+        Room room = floor.getRoomById(roomId);
+        return room.getName();
+    }
+    @GetMapping("/{buildingId}/floors/{floorId}/rooms/{roomId}/id")
+    public int getRoomId(@PathVariable(value = "buildingId") int buildingId,
+                           @PathVariable(value = "floorId") int floorId,
+                           @PathVariable(value = "roomId") int roomId) {
+        Building building = BuildingRepository.findById(buildingId);
+        Floor floor = building.getFloorById(floorId);
+        Room room = floor.getRoomById(roomId);
+        return room.getId();
+    }
+    @GetMapping("/{buildingId}/floors/{floorId}/rooms/{roomId}/LightingPowerDensity")
+    public double getRoomLightingPowerDensity(@PathVariable(value = "buildingId") int buildingId,
+                           @PathVariable(value = "floorId") int floorId,
+                           @PathVariable(value = "roomId") int roomId) {
+        Building building = BuildingRepository.findById(buildingId);
+        Floor floor = building.getFloorById(floorId);
+        Room room = floor.getRoomById(roomId);
+        
+        return room.calculateLightingPowerDensity();
+    }
+    @GetMapping("/{buildingId}/Volume")
+    public double getBuildingVolume(@PathVariable(value = "buildingId") int buildingId) {
+        Building building = BuildingRepository.findById(buildingId);
+        return building.calculateVolume();
+    }
+    @GetMapping("/{buildingId}/Area")
+    public double getBuildingArea(@PathVariable(value = "buildingId") int buildingId) {
+        Building building = BuildingRepository.findById(buildingId);
+        return building.calculateArea();
+    }
+    @GetMapping("/{buildingId}/LightingPowerDensity")
+    public double getBuildingLightingPowerDensity(@PathVariable(value = "buildingId") int buildingId) {
+        Building building = BuildingRepository.findById(buildingId);
+        return building.calculateAverageLightingPowerDensity();
+    }
+    
+    @GetMapping("/{buildingId}/floors/{floorId}/Volume")
+    public double getFloorVolume(@PathVariable(value = "buildingId") int buildingId,
+                                @PathVariable(value = "floorId") int floorId) {
+        Building building = BuildingRepository.findById(buildingId);
+        Floor floor = building.getFloorById(floorId);
+        return floor.calculateVolume();
+    }
     
     
+    @GetMapping("/{buildingId}/floors/{floorId}/Area")
+    public double getFloorArea(@PathVariable(value = "buildingId") int buildingId,
+                            @PathVariable(value = "floorId") int floorId) {
+        Building building = BuildingRepository.findById(buildingId);
+        Floor floor = building.getFloorById(floorId);
+        return floor.calculateArea();
+    }
+    @GetMapping("/{buildingId}/floors/{floorId}/LightingPowerDensity")
+    public double getFloorLightingPowerDensity(@PathVariable(value = "buildingId") int buildingId,
+                            @PathVariable(value = "floorId") int floorId) {
+        Building building = BuildingRepository.findById(buildingId);
+        Floor floor = building.getFloorById(floorId);
+        return floor.calculateAverageLightingPowerDensity();
+    }
+
     
 }
